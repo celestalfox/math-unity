@@ -87,7 +87,7 @@ public class PlayerCharacter : MonoBehaviour
     private float _airTime = 0.0f;
     private bool _isInCoyoteTime = false;
 
-    //Jump
+    //Jump (n'est marcha pas gravity inversé)
     private float _currentJumpForce = 0.0f;
     private bool _isJumping = false;
     private float _jumpTime = 0.0f;
@@ -273,7 +273,6 @@ public class PlayerCharacter : MonoBehaviour
         }
 
         _forceToAdd.y += velocityDelta * _gravityDirection;
-        Debug.Log("gravity applied"+_isJumping+"=jumping and "+_isGrounded+"is grounded");
     }
 
         public void ToggleGravity()
@@ -376,13 +375,12 @@ public class PlayerCharacter : MonoBehaviour
     }
 
     public void ActionOne()
-{
-    if (_movementInput != 0) // only toggle if moving
     {
-        isSprinting = !isSprinting;
-
+        if (_movementInput != 0) 
+        {
+            isSprinting = !isSprinting;
+        }
     }
-}
 
     public void ActionTwo()
     {
