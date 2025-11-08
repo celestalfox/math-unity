@@ -6,10 +6,10 @@ public class bouncerscript : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
-        var _character = other.GetComponent<PlayerCharacter>(); 
-        if (_character != null)
+        PlayerCharacter player = other.GetComponent<PlayerCharacter>(); 
+        if (player != null)
         {
-            _character.StartJump();
+            player.StartJump();
         }
     }
 }
